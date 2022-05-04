@@ -4,6 +4,12 @@
 # Documents
 図やデータシート、書類などを保存して共有する。
 
+# 気をつけてほしいこと
+* pip3 install した時、以下のコマンドを実行してほしい。
+```
+sh export_pip3_lib.sh
+```
+
 # Ubuntu20.04LTSでROS1の環境構築をする。
 ## Python3の設定をする。
 1. Ubuntuを更新する。
