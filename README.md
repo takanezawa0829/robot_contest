@@ -51,6 +51,26 @@ sudo rosdep init
 rosdep update
 ```
 
+## ワークスペースを設定する。
+1. bash.rcに少し追記する。
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+```
+2. bash.rcにcatkin_wsを有効にするための記述を追加する。
+```
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+
+
+
+
+
+
+
 
 
 
