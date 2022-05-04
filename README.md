@@ -5,7 +5,7 @@
 図やデータシート、書類などを保存して共有する。
 
 # 気をつけてほしいこと
-* pip3 install した時、以下のコマンドを実行してほしい。
+* pip3 install ～ でpackageをinstallした時、以下のコマンドを実行してほしい。
 ```
 sh scripts/export_pip3_lib.sh
 ```
