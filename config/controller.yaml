@@ -1,0 +1,73 @@
+spiderrobot:
+  rev1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev1
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev2
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev3
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev4
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev5
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev6
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev7_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev7
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev8
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev9_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev9
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev10
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev11_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev11
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev12_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev12
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev13_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev13
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev14_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev14
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev15_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev15
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev16_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev16
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev17_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev17
+    pid: {p: 10.0, i: 0.001, d: 0.01}
+  rev18_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: rev18
+    pid: {p: 10.0, i: 0.001, d: 0.01}
