@@ -4,6 +4,9 @@
 <xacro:include filename="$(find robot_contest)/urdf/materials.xacro" />
 <xacro:include filename="$(find robot_contest)/urdf/spiderrobot.trans" />
 <xacro:include filename="$(find robot_contest)/urdf/spiderrobot.gazebo" />
+
+<link name="dummy"></link>
+
 <link name="base_link">
   <inertial>
     <origin xyz="3.282245274372618e-08 0.03481866967141663 -0.07599613973394033" rpy="0 0 0"/>
@@ -1053,6 +1056,11 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="dummy_joint" type="fixed">
+  <parent link="dummy"/>
+  <child link="base_link"/>
+</joint>
 
 <joint name="fixed1" type="fixed">
   <origin xyz="0.137126 0.047626 0.0015" rpy="0 0 0"/>
