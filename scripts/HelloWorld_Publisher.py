@@ -8,38 +8,32 @@
 from os import rename
 import rospy
 # 自分で定義したmessageファイルから生成されたモジュール
-from robot_contest.msg import OutputCsv
+from std_msgs.msg import String
 
 # 実際にpublishする関数
 def publish_date():
-    # 初期化宣言 : このソフトウェアは"publish_date"という名前
-    rospy.init_node('publish_date', anonymous=True)
+    # 初期化宣言 : このソフトウェアは"hello_world"という名前
+    rospy.init_node('hello_world', anonymous=True)
 
     # nodeの宣言: publisherのインスタンスを作る
-    # output_csvというtopicにOutputCsv型のmessageを送るPublisherを作成
-    oc = rospy.Publisher('output_csv', OutputCsv, queue_size=100)
+    # hello_worldというtopicにString型のmessageを送るPublisherを作成
+    oc = rospy.Publisher('hello_world', String, queue_size=100)
 
     # 1秒間にpublishする数の設定
-    r = rospy.Rate(10)
+    r = rospy.Rate(1)
 
     # 送信するデータxを定義する
     x = 0
 
     # OutputCsv型のmessageのインスタンスを作成
-    oc_msg = OutputCsv()
-
-    # ヘッダーを設定
-    oc_msg.header = ["項目1", "項目2", "項目3", "項目4", "項目5"]
+    oc_msg = String()
 
     # ctl + Cで終了しない限りwhileループでpublishし続ける
     while not rospy.is_shutdown():
         # データを入力
-        oc_msg.value = []
-        for i in range(5):
-            oc_msg.value.append(x)
-            x += 1
+        oc_msg.data = "Hello World!!!"
 
-        print(oc_msg.value)
+        print(oc_msg.data)
 
         # publishする関数
         oc.publish(oc_msg)
