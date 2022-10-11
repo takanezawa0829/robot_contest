@@ -1,0 +1,3 @@
+[submodule "scripts/HiwonderServoController"]
+	path = scripts/HiwonderServoController
+	url = git@github.com:takanezawa0829/HiwonderServoController.git
