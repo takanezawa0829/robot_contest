@@ -25,11 +25,11 @@ def publish_data():
     # messageのインスタンスを作成
     data = MoveServo()
 
-    data.coordinate_x = 12
-    data.coordinate_y = 10
-    data.coordinate_z = 1
+    data.coordinate_x = 0.01
+    data.coordinate_y = -0.16
+    data.coordinate_z = -0.10
     data.id = 1
-    data.time = 10
+    data.time = 5
 
     # ctl + Cで終了しない限りwhileループでpublishし続ける
     while not rospy.is_shutdown():
