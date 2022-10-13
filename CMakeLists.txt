@@ -53,6 +53,9 @@ add_message_files(
   # Message1.msg
   # Message2.msg
   OutputCsv.msg
+  MoveServo.msg
+  TargetCoordinate.msg
+
 )
 
 ## Generate services in the 'srv' folder

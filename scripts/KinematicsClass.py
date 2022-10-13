@@ -73,21 +73,38 @@ class InverseKinematics:
     def get_AVE(self):
         return np.dot(self.RJ, self.velocity)
 
-theta_a = np.matrix([
-    [0],
-    [0],
-    [np.pi / 2],
-])
+# theta_a = np.matrix([
+#     [0],
+#     [0],
+#     [np.pi / 2],
+# ])
 
-foot_link = np.matrix([
-    [100],
-    [-100],
-    [0],
-])
+# foot_link = np.matrix([
+#     [100],
+#     [-100],
+#     [0],
+# ])
 
-a = ForwardKinematics(config.l_len, foot_link, False)
-a.set_pram(theta_a)
-print(a.get_T())
+# a = ForwardKinematics(config.l_len, foot_link, False)
+# a.set_pram(theta_a)
+# print(a.get_T())
+
+# theta_b = np.matrix([
+#     [90],
+#     [45],
+#     [-90],
+# ])
+
+# velocity_b = np.matrix([
+#     [3],
+#     [2],
+#     [5],
+# ])
+
+# b = InverseKinematics(config.l_len, False)
+# b.set_pram(theta_b, velocity_b)
+# print(b.get_AVE())
+
 
 
 
