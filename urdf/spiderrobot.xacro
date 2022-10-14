@@ -4,9 +4,6 @@
 <xacro:include filename="$(find robot_contest)/urdf/materials.xacro" />
 <xacro:include filename="$(find robot_contest)/urdf/spiderrobot.trans" />
 <xacro:include filename="$(find robot_contest)/urdf/spiderrobot.gazebo" />
-
-<link name="dummy"></link>
-
 <link name="base_link">
   <inertial>
     <origin xyz="3.282245274372618e-08 0.03481866967141663 -0.07599613973394033" rpy="0 0 0"/>
@@ -933,8 +930,8 @@
 
 <link name="part25_1">
   <inertial>
-    <origin xyz="0.0017361935097957026 0.044915648494241484 0.008899740383932205" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="0.0017361935097957026 0.044915648494241484 0.008899740383932198" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="4.5e-05" iyy="7e-05" izz="0.000103" ixy="-1.7e-05" iyz="1e-06" ixz="-4e-06"/>
   </inertial>
   <visual>
@@ -954,8 +951,8 @@
 
 <link name="part26_1">
   <inertial>
-    <origin xyz="0.009877618182187353 -0.036773426340494214 0.008899740383927643" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="0.009877618182187353 -0.03677342634049424 0.008899740383927643" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="7e-05" iyy="4.5e-05" izz="0.000103" ixy="1.7e-05" iyz="4e-06" ixz="1e-06"/>
   </inertial>
   <visual>
@@ -975,8 +972,8 @@
 
 <link name="part27_1">
   <inertial>
-    <origin xyz="-0.03053175511870966 0.03298771831863015 0.0088997403839307" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="-0.03053175511870967 0.03298771831863015 0.008899740383930703" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="7.4e-05" iyy="4e-05" izz="0.000103" ixy="-1.2e-05" iyz="-2e-06" ixz="-3e-06"/>
   </inertial>
   <visual>
@@ -996,8 +993,8 @@
 
 <link name="part28_1">
   <inertial>
-    <origin xyz="-0.019018041929975325 -0.032987920837272505 0.008899740383928788" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="-0.019018041929975315 -0.032987920837272505 0.00889974038392878" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="7.4e-05" iyy="4e-05" izz="0.000103" ixy="-1.2e-05" iyz="2e-06" ixz="3e-06"/>
   </inertial>
   <visual>
@@ -1017,8 +1014,8 @@
 
 <link name="part29_1">
   <inertial>
-    <origin xyz="-0.044915648277905174 0.00173699077481701 0.008899740383929485" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="-0.04491564827790512 0.00173699077481701 0.008899740383929485" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="7e-05" iyy="4.5e-05" izz="0.000103" ixy="1.7e-05" iyz="-4e-06" ixz="-1e-06"/>
   </inertial>
   <visual>
@@ -1038,8 +1035,8 @@
 
 <link name="part30_1">
   <inertial>
-    <origin xyz="-0.03677422360551508 -0.009877617965850266 0.008899740383929787" rpy="0 0 0"/>
-    <mass value="0.065769252161634"/>
+    <origin xyz="-0.03677422360551508 -0.009877617965850238 0.008899740383929784" rpy="0 0 0"/>
+    <mass value="0.06576925216163401"/>
     <inertia ixx="4.5e-05" iyy="7e-05" izz="0.000103" ixy="-1.7e-05" iyz="-1e-06" ixz="4e-06"/>
   </inertial>
   <visual>
@@ -1057,10 +1054,131 @@
   </collision>
 </link>
 
-<joint name="dummy_joint" type="fixed">
-  <parent link="dummy"/>
-  <child link="base_link"/>
-</joint>
+<link name="part31_1">
+  <inertial>
+    <origin xyz="0.0008355892395670028 0.0008840642622905404 -0.0002871256335237986" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.343872 -0.252161 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part31_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.343872 -0.252161 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part31_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part32_1">
+  <inertial>
+    <origin xyz="0.0008355892395553455 -0.0008842667809457194 -0.00028712563353011297" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.343872 0.252161 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part32_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.343872 0.252161 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part32_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part33_1">
+  <inertial>
+    <origin xyz="-3.490580370341459e-05 0.0012159826925407513 -0.0002871256335257519" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001564 -0.35332 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part33_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001564 -0.35332 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part33_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part34_1">
+  <inertial>
+    <origin xyz="-3.490580372020368e-05 -0.0012161852111830518 -0.00028712563352848927" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001564 0.35332 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part34_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001564 0.35332 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part34_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part35_1">
+  <inertial>
+    <origin xyz="-0.000884064045953592 0.0008353865045884201 -0.0002871256335273929" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.341661 -0.254372 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part35_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.341661 -0.254372 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part35_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part36_1">
+  <inertial>
+    <origin xyz="-0.0008356193352874741 -0.0008840337338980042 -0.0002871256335271327" rpy="0 0 0"/>
+    <mass value="0.0010275626277354132"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.342104 0.253929 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part36_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.342104 0.253929 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part36_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="fixed1" type="fixed">
   <origin xyz="0.137126 0.047626 0.0015" rpy="0 0 0"/>
@@ -1109,8 +1227,7 @@
   <parent link="servo1_1"/>
   <child link="part1_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev2" type="revolute">
@@ -1118,8 +1235,7 @@
   <parent link="servo2_1"/>
   <child link="part2_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev3" type="revolute">
@@ -1127,8 +1243,7 @@
   <parent link="servo3_1"/>
   <child link="part3_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev4" type="revolute">
@@ -1136,8 +1251,7 @@
   <parent link="servo4_1"/>
   <child link="part4_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev5" type="revolute">
@@ -1145,8 +1259,7 @@
   <parent link="servo5_1"/>
   <child link="part5_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev6" type="revolute">
@@ -1154,8 +1267,7 @@
   <parent link="servo6_1"/>
   <child link="part6_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="fixed8" type="fixed">
@@ -1199,8 +1311,7 @@
   <parent link="part7_1"/>
   <child link="servo7_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev8" type="revolute">
@@ -1208,8 +1319,7 @@
   <parent link="part8_1"/>
   <child link="servo8_1"/>
   <axis xyz="-0.707107 -0.707107 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev9" type="revolute">
@@ -1217,8 +1327,7 @@
   <parent link="part9_1"/>
   <child link="servo9_1"/>
   <axis xyz="-1.0 0.0 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev10" type="revolute">
@@ -1226,8 +1335,7 @@
   <parent link="part10_1"/>
   <child link="servo10_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev11" type="revolute">
@@ -1235,8 +1343,7 @@
   <parent link="part11_1"/>
   <child link="servo11_1"/>
   <axis xyz="-0.707107 -0.707107 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev12" type="revolute">
@@ -1244,8 +1351,7 @@
   <parent link="part12_1"/>
   <child link="servo12_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="2.094395" lower="-2.094395" effort="4" velocity="4.75998484848"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
 </joint>
 
 <joint name="fixed14" type="fixed">
@@ -1361,8 +1467,7 @@
   <parent link="servo13_1"/>
   <child link="part25_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="3.141593" lower="-1.047198" effort="4" velocity="4.75998484848"/>
+  <limit upper="3.141593" lower="-1.047198" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev14" type="revolute">
@@ -1370,8 +1475,7 @@
   <parent link="servo14_1"/>
   <child link="part26_1"/>
   <axis xyz="-0.707107 -0.707107 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="1.047198" lower="-3.141593" effort="4" velocity="4.75998484848"/>
+  <limit upper="1.047198" lower="-3.141593" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev15" type="revolute">
@@ -1379,8 +1483,7 @@
   <parent link="servo15_1"/>
   <child link="part27_1"/>
   <axis xyz="-1.0 0.0 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="3.141593" lower="-1.047198" effort="4" velocity="4.75998484848"/>
+  <limit upper="3.141593" lower="-1.047198" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev16" type="revolute">
@@ -1388,8 +1491,7 @@
   <parent link="servo16_1"/>
   <child link="part28_1"/>
   <axis xyz="-1.0 -0.0 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="1.047198" lower="-3.141593" effort="4" velocity="4.75998484848"/>
+  <limit upper="1.047198" lower="-3.141593" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev17" type="revolute">
@@ -1397,8 +1499,7 @@
   <parent link="servo17_1"/>
   <child link="part29_1"/>
   <axis xyz="-0.707107 -0.707107 -0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="3.141593" lower="-1.047198" effort="4" velocity="4.75998484848"/>
+  <limit upper="3.141593" lower="-1.047198" effort="100" velocity="100"/>
 </joint>
 
 <joint name="rev18" type="revolute">
@@ -1406,8 +1507,43 @@
   <parent link="servo18_1"/>
   <child link="part30_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
-  <dynamics damping="0.1"/>
-  <limit upper="1.047198" lower="-3.141593" effort="4" velocity="4.75998484848"/>
+  <limit upper="1.047198" lower="-3.141593" effort="100" velocity="100"/>
+</joint>
+
+<joint name="fixed32" type="fixed">
+  <origin xyz="0.078162 0.112757 0.0" rpy="0 0 0"/>
+  <parent link="part25_1"/>
+  <child link="part31_1"/>
+</joint>
+
+<joint name="fixed33" type="fixed">
+  <origin xyz="0.078162 -0.112756 0.0" rpy="0 0 0"/>
+  <parent link="part26_1"/>
+  <child link="part32_1"/>
+</joint>
+
+<joint name="fixed34" type="fixed">
+  <origin xyz="-0.024461 0.135 0.0" rpy="0 0 0"/>
+  <parent link="part27_1"/>
+  <child link="part33_1"/>
+</joint>
+
+<joint name="fixed35" type="fixed">
+  <origin xyz="-0.024461 -0.135 0.0" rpy="0 0 0"/>
+  <parent link="part28_1"/>
+  <child link="part34_1"/>
+</joint>
+
+<joint name="fixed36" type="fixed">
+  <origin xyz="-0.112757 0.078163 0.0" rpy="0 0 0"/>
+  <parent link="part29_1"/>
+  <child link="part35_1"/>
+</joint>
+
+<joint name="fixed37" type="fixed">
+  <origin xyz="-0.1132 -0.077719 0.0" rpy="0 0 0"/>
+  <parent link="part30_1"/>
+  <child link="part36_1"/>
 </joint>
 
 </robot>

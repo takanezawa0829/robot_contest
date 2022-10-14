@@ -1,15 +1,11 @@
 <launch>
-    <arg name="model" default="$(find robot_contest)/urdf/spiderrobot.xacro"/>
-    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
-    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model spiderrobot -param robot_description"/>
-    <rosparam file="$(find robot_contest)/config/controller.yaml" command="load"/>
-    <node name="controller_spawner" pkg="controller_manager"
-        type="spawner" respawn="false"
-        output="screen" ns="/spiderrobot"
-        args="rev1_position_controller rev2_position_controller rev3_position_controller rev4_position_controller rev5_position_controller rev6_position_controller rev7_position_controller rev8_position_controller rev9_position_controller rev10_position_controller rev11_position_controller rev12_position_controller rev13_position_controller rev14_position_controller rev15_position_controller rev16_position_controller rev17_position_controller rev18_position_controller"/>
-    <!-- <node name="controller_spawner" pkg="controller_manager"
-        type="spawner" respawn="false"
-        output="screen" ns="/spiderrobot"
-        args="rev1_position_controller rev7_position_controller rev13_position_controller"/> -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find robot_contest)/urdf/spiderrobot.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model spiderrobot"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
 </launch>
