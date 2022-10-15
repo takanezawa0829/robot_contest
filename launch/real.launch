@@ -66,8 +66,6 @@
   </include>
 
   <!-- 実機をJointStateに追従させる -->
-  <node pkg="moveit_sample_description" type="serial.py" name="serial">
-    <param name="port" value="tcp"/>
-  </node>
+  <node pkg="robot_contest" type="machine_interface.py" name="machine_interface"/>
 
 </launch>

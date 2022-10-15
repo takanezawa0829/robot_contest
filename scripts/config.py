@@ -1,5 +1,40 @@
 import numpy as np
 
-# 関節の長さ（第3関節、第2関節,第1関節）[mm]
-l_len = [10, 100, 1000]
+serial_port = '/dev/ttyUSB0'
+serial_timeout = 1
 
+# 数値データが1増えると何度増えるか
+data_rad_diff = 0.24
+
+foot = {
+    'front': {
+        'left': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+        'right': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+    },
+    'middle': {
+        'left': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+        'right': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+    },
+    'end': {
+        'left': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+        'right': {
+            'standard': [500, 500, 200],
+            'reverse': [True, True, False],
+        },
+    },
+}
