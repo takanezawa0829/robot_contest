@@ -1,9 +1,0 @@
-<launch>
-
-<rosparam file="$(find robot_contest)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="spider_robot" args="rev1_position_controller rev2_position_controller rev3_position_controller d_rev1_position_controller d_rev2_position_controller d_rev3_position_controller rev4_position_controller rev5_position_controller rev6_position_controller d_rev4_position_controller d_rev5_position_controller d_rev6_position_controller rev7_position_controller rev8_position_controller rev9_position_controller d_rev7_position_controller d_rev8_position_controller d_rev9_position_controller rev10_position_controller rev11_position_controller rev12_position_controller d_rev10_position_controller d_rev11_position_controller d_rev12_position_controller rev13_position_controller rev14_position_controller rev15_position_controller d_rev13_position_controller d_rev14_position_controller d_rev15_position_controller rev16_position_controller rev17_position_controller rev18_position_controller d_rev16_position_controller d_rev17_position_controller d_rev18_position_controller joint_state_controller "/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-  <remap from="/joint_states" to="/spider_robot/joint_states"/>
-</node>
-
-</launch>
