@@ -1,0 +1,1045 @@
+<?xml version="1.0" ?>
+<robot name="spider_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robot_contest)/urdf/materials.xacro" />
+<xacro:include filename="$(find robot_contest)/urdf/spider_robot.trans" />
+<xacro:include filename="$(find robot_contest)/urdf/spider_robot.gazebo" />
+
+<link name="dummy">
+</link>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.012498209191529774 1.7496974071002831e-13 0.0009731404762877922" rpy="0 0 0"/>
+    <mass value="1.80778160581464"/>
+    <inertia ixx="0.027407" iyy="0.010993" izz="0.028617" ixy="-0.0" iyz="0.0" ixz="0.002015"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part1_1">
+  <inertial>
+    <origin xyz="0.0406275735859281 0.07461587091689897 0.011754836260053298" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="0.000354" iyy="5.1e-05" izz="0.000367" ixy="-8.6e-05" iyz="3.2e-05" ixz="1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.067071 0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.067071 0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part2_1">
+  <inertial>
+    <origin xyz="0.093210203534517 0.1995912315229256 -0.014453508806619629" rpy="0 0 0"/>
+    <mass value="0.531782740534772"/>
+    <inertia ixx="0.009933" iyy="0.000995" izz="0.010806" ixy="-0.001933" iyz="0.000632" ixz="0.000138"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.082009 0.208101 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.082009 0.208101 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part3_1">
+  <inertial>
+    <origin xyz="0.020802990843692082 0.10926815025858176 -0.005288903492875214" rpy="0 0 0"/>
+    <mass value="0.12505650813053104"/>
+    <inertia ixx="0.002641" iyy="0.000153" izz="0.002722" ixy="-0.000128" iyz="0.000259" ixz="1.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173452 0.231662 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173452 0.231662 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part1_1">
+  <inertial>
+    <origin xyz="-1.5718367696315738e-07 -7.586335737386207e-08 7.494005416219807e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part2_1">
+  <inertial>
+    <origin xyz="-1.5718367696315738e-07 -7.586335737386207e-08 7.494005416219807e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part3_1">
+  <inertial>
+    <origin xyz="-1.5718367696315738e-07 -7.586335737386207e-08 7.424616477180734e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part4_1">
+  <inertial>
+    <origin xyz="-0.07691919454265221 0.007217146282982756 0.008868255825853702" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="5.8e-05" iyy="0.000171" izz="0.000186" ixy="5.7e-05" iyz="1.1e-05" ixz="-2.6e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.067071 0.156571 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.067071 0.156571 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part5_1">
+  <inertial>
+    <origin xyz="0.06214795924517012 -0.07868893741539248 -0.01445350881492818" rpy="0 0 0"/>
+    <mass value="0.531782740534772"/>
+    <inertia ixx="0.001749" iyy="0.003068" izz="0.004695" ixy="0.001505" iyz="-0.000207" ixz="0.000331"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082009 0.208101 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082009 0.208101 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part6_1">
+  <inertial>
+    <origin xyz="-0.03147293086420935 0.10321299484181759 -0.005288903492875221" rpy="0 0 0"/>
+    <mass value="0.12505650813053248"/>
+    <inertia ixx="0.002441" iyy="0.000189" izz="0.002558" ixy="0.000319" iyz="0.000242" ixz="-3.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.173452 0.231662 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.173452 0.231662 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part4_1">
+  <inertial>
+    <origin xyz="1.571836772962243e-07 -7.586335737386207e-08 9.54097911787244e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part5_1">
+  <inertial>
+    <origin xyz="1.571836772962243e-07 -7.586335737386207e-08 9.54097911787244e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part6_1">
+  <inertial>
+    <origin xyz="1.571836772962243e-07 -7.586335737386207e-08 2.42861286636753e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.257686 0.345418 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part7_1">
+  <inertial>
+    <origin xyz="0.04760800534982393 0.0014432902170995274 0.011754836260053147" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="3.5e-05" iyy="5e-05" izz="4.7e-05" ixy="-3e-06" iyz="1e-06" ixz="1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.09 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.09 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part8_1">
+  <inertial>
+    <origin xyz="0.09488310137697165 0.0790088049554718 -0.014453508806619749" rpy="0 0 0"/>
+    <mass value="0.531782740534772"/>
+    <inertia ixx="0.001274" iyy="0.001239" izz="0.002391" ixy="-0.000593" iyz="0.000158" ixz="0.000164"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.137 0.025875 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.137 0.025875 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part9_1">
+  <inertial>
+    <origin xyz="0.08291366552091187 -0.014833512817442334 -0.005288903492875382" rpy="0 0 0"/>
+    <mass value="0.12505650813053104"/>
+    <inertia ixx="8.9e-05" iyy="0.000408" izz="0.000425" ixy="-1.9e-05" iyz="1.4e-05" ixz="7.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.21832 -0.022125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.21832 -0.022125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part7_1">
+  <inertial>
+    <origin xyz="4.996003610813204e-16 -2.985892783025079e-16 3.7470027081099033e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part8_1">
+  <inertial>
+    <origin xyz="4.996003610813204e-16 -2.985892783025079e-16 3.7470027081099033e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part9_1">
+  <inertial>
+    <origin xyz="4.996003610813204e-16 -2.985892783025079e-16 3.7470027081099033e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part10_1">
+  <inertial>
+    <origin xyz="-0.0683460744679519 0.0014432902170994414 0.00886825582585395" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="3.7e-05" iyy="0.000108" izz="0.000102" ixy="4e-06" iyz="1e-06" ixz="-1.9e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.09 -0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.09 -0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part11_1">
+  <inertial>
+    <origin xyz="-0.11907163189851072 -0.012542802949571278 -0.014453508814928354" rpy="0 0 0"/>
+    <mass value="0.531782740534772"/>
+    <inertia ixx="0.001017" iyy="0.001909" izz="0.002803" ixy="-0.00064" iyz="-0.000118" ixz="-0.000236"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.137 0.025875 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.137 0.025875 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part12_1">
+  <inertial>
+    <origin xyz="-0.08569515598484359 -0.020888790210732734 -0.005288903492876123" rpy="0 0 0"/>
+    <mass value="0.12505650813052632"/>
+    <inertia ixx="8.5e-05" iyy="0.000438" izz="0.00045" ixy="1.2e-05" iyz="-3e-06" ixz="-8.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.21832 -0.022125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.21832 -0.022125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part10_1">
+  <inertial>
+    <origin xyz="-1.6653345369377348e-16 -4.64255370258293e-16 -4.0592529337857286e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part11_1">
+  <inertial>
+    <origin xyz="-1.6653345369377348e-16 -4.64255370258293e-16 -4.0592529337857286e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part12_1">
+  <inertial>
+    <origin xyz="-1.6653345369377348e-16 -4.64255370258293e-16 -4.0592529337857286e-16" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35832 -0.00125 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part13_1">
+  <inertial>
+    <origin xyz="0.0769191945426521 0.006038468710280048 0.011754836260052965" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="3.8e-05" iyy="0.000168" izz="0.000169" ixy="2.4e-05" iyz="-4e-06" ixz="2.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.067071 -0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.067071 -0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part14_1">
+  <inertial>
+    <origin xyz="0.14973339399653596 0.050893217889878384 -0.014453508806619865" rpy="0 0 0"/>
+    <mass value="0.531782740534772"/>
+    <inertia ixx="0.000766" iyy="0.004634" izz="0.005278" ixy="-0.000164" iyz="1e-05" ixz="0.000421"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.118601 -0.171509 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.118601 -0.171509 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part15_1">
+  <inertial>
+    <origin xyz="0.07229127757085066 -0.021139183858606192 -0.005288903492875519" rpy="0 0 0"/>
+    <mass value="0.12505650813053124"/>
+    <inertia ixx="0.000225" iyy="0.000256" izz="0.000409" ixy="0.000104" iyz="-5.2e-05" ixz="5.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142162 -0.262952 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142162 -0.262952 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part13_1">
+  <inertial>
+    <origin xyz="7.586335742937322e-08 -1.5718367712969084e-07 -1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part14_1">
+  <inertial>
+    <origin xyz="7.586335742937322e-08 -1.5718367712969084e-07 -1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part15_1">
+  <inertial>
+    <origin xyz="7.586335742937322e-08 -1.5718367712969084e-07 -1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part16_1">
+  <inertial>
+    <origin xyz="-0.0509966081449921 0.02159202054887613 0.008868255825854113" rpy="0 0 0"/>
+    <mass value="0.0413494129978488"/>
+    <inertia ixx="3.7e-05" iyy="7.6e-05" izz="7.1e-05" ixy="7e-06" iyz="2e-06" ixz="-1.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.067071 -0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.067071 -0.156571 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part17_1">
+  <inertial>
+    <origin xyz="-0.04464830534119242 -0.07656772867540995 -0.014453508814928104" rpy="0 0 0"/>
+    <mass value="0.5317827405347721"/>
+    <inertia ixx="0.003975" iyy="0.000811" izz="0.004664" ixy="-0.000831" iyz="-0.000374" ixz="-0.000104"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.118601 -0.171509 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.118601 -0.171509 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part18_1">
+  <inertial>
+    <origin xyz="-0.10136887595875216 -0.0482309900326357 -0.005288903492875568" rpy="0 0 0"/>
+    <mass value="0.12505650813053187"/>
+    <inertia ixx="0.000505" iyy="0.000558" izz="0.000991" ixy="-0.00037" iyz="-0.000105" ixz="-0.000102"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142162 -0.262952 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142162 -0.262952 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part16_1">
+  <inertial>
+    <origin xyz="-7.586335770692898e-08 -1.5718367724071314e-07 -7.632783294297951e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part17_1">
+  <inertial>
+    <origin xyz="-7.586335770692898e-08 -1.5718367724071314e-07 -7.632783294297951e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="d_part18_1">
+  <inertial>
+    <origin xyz="-7.586335770692898e-08 -1.5718367724071314e-07 -7.632783294297951e-17" rpy="0 0 0"/>
+    <mass value="4.110250388446646e-06"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="0.255918 -0.347186 -0.020875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robot_contest/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="dummy_joint" type="fixed">
+  <parent link="dummy"/>
+  <child link="base_link"/>
+</joint>
+
+<joint name="rev1" type="continuous">
+  <origin xyz="0.067071 -0.156571 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="rev2" type="continuous">
+  <origin xyz="0.014938 -0.05153 0.020875" rpy="0 0 0"/>
+  <parent link="part1_1"/>
+  <child link="part2_1"/>
+  <axis xyz="-0.707107 -0.707107 -0.0"/>
+</joint>
+
+<joint name="rev3" type="continuous">
+  <origin xyz="0.091443 -0.023561 0.0" rpy="0 0 0"/>
+  <parent link="part2_1"/>
+  <child link="part3_1"/>
+  <axis xyz="0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev1" type="continuous">
+  <origin xyz="0.084234 -0.113756 0.0" rpy="0 0 0"/>
+  <parent link="part3_1"/>
+  <child link="d_part1_1"/>
+  <axis xyz="-0.707107 -0.707107 -0.0"/>
+</joint>
+
+<joint name="d_rev2" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part1_1"/>
+  <child link="d_part2_1"/>
+  <axis xyz="0.707107 -0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev3" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part2_1"/>
+  <child link="d_part3_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="rev4" type="continuous">
+  <origin xyz="-0.067071 -0.156571 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part4_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="rev5" type="continuous">
+  <origin xyz="-0.014938 -0.05153 0.020875" rpy="0 0 0"/>
+  <parent link="part4_1"/>
+  <child link="part5_1"/>
+  <axis xyz="0.707107 -0.707107 -0.0"/>
+</joint>
+
+<joint name="rev6" type="continuous">
+  <origin xyz="-0.091443 -0.023561 0.0" rpy="0 0 0"/>
+  <parent link="part5_1"/>
+  <child link="part6_1"/>
+  <axis xyz="-0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev4" type="continuous">
+  <origin xyz="-0.084234 -0.113756 0.0" rpy="0 0 0"/>
+  <parent link="part6_1"/>
+  <child link="d_part4_1"/>
+  <axis xyz="-0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev5" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part4_1"/>
+  <child link="d_part5_1"/>
+  <axis xyz="-0.707107 -0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev6" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part5_1"/>
+  <child link="d_part6_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="rev7" type="continuous">
+  <origin xyz="0.09 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part7_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="rev8" type="continuous">
+  <origin xyz="0.047 -0.025875 0.020875" rpy="0 0 0"/>
+  <parent link="part7_1"/>
+  <child link="part8_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rev9" type="continuous">
+  <origin xyz="0.08132 0.048 0.0" rpy="0 0 0"/>
+  <parent link="part8_1"/>
+  <child link="part9_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="d_rev7" type="continuous">
+  <origin xyz="0.14 -0.020875 0.0" rpy="0 0 0"/>
+  <parent link="part9_1"/>
+  <child link="d_part7_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="d_rev8" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part7_1"/>
+  <child link="d_part8_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="d_rev9" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part8_1"/>
+  <child link="d_part9_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="rev10" type="continuous">
+  <origin xyz="-0.09 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part10_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="rev11" type="continuous">
+  <origin xyz="-0.047 -0.025875 0.020875" rpy="0 0 0"/>
+  <parent link="part10_1"/>
+  <child link="part11_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="rev12" type="continuous">
+  <origin xyz="-0.08132 0.048 0.0" rpy="0 0 0"/>
+  <parent link="part11_1"/>
+  <child link="part12_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="d_rev10" type="continuous">
+  <origin xyz="-0.14 -0.020875 0.0" rpy="0 0 0"/>
+  <parent link="part12_1"/>
+  <child link="d_part10_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="d_rev11" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part10_1"/>
+  <child link="d_part11_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="d_rev12" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part11_1"/>
+  <child link="d_part12_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="rev13" type="continuous">
+  <origin xyz="0.067071 0.156571 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part13_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="rev14" type="continuous">
+  <origin xyz="0.05153 0.014938 0.020875" rpy="0 0 0"/>
+  <parent link="part13_1"/>
+  <child link="part14_1"/>
+  <axis xyz="0.707107 -0.707107 -0.0"/>
+</joint>
+
+<joint name="rev15" type="continuous">
+  <origin xyz="0.023561 0.091443 0.0" rpy="0 0 0"/>
+  <parent link="part14_1"/>
+  <child link="part15_1"/>
+  <axis xyz="-0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev13" type="continuous">
+  <origin xyz="0.113756 0.084234 0.0" rpy="0 0 0"/>
+  <parent link="part15_1"/>
+  <child link="d_part13_1"/>
+  <axis xyz="0.707107 -0.707107 -0.0"/>
+</joint>
+
+<joint name="d_rev14" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part13_1"/>
+  <child link="d_part14_1"/>
+  <axis xyz="0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="d_rev15" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part14_1"/>
+  <child link="d_part15_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="rev16" type="continuous">
+  <origin xyz="-0.067071 0.156571 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part16_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="rev17" type="continuous">
+  <origin xyz="-0.05153 0.014938 0.020875" rpy="0 0 0"/>
+  <parent link="part16_1"/>
+  <child link="part17_1"/>
+  <axis xyz="-0.707107 -0.707107 0.0"/>
+</joint>
+
+<joint name="rev18" type="continuous">
+  <origin xyz="-0.023561 0.091443 0.0" rpy="0 0 0"/>
+  <parent link="part17_1"/>
+  <child link="part18_1"/>
+  <axis xyz="0.707107 0.707107 -0.0"/>
+</joint>
+
+<joint name="d_rev16" type="continuous">
+  <origin xyz="-0.113756 0.084234 0.0" rpy="0 0 0"/>
+  <parent link="part18_1"/>
+  <child link="d_part16_1"/>
+  <axis xyz="0.707107 0.707107 -0.0"/>
+</joint>
+
+<joint name="d_rev17" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part16_1"/>
+  <child link="d_part17_1"/>
+  <axis xyz="-0.707107 0.707107 -0.0"/>
+</joint>
+
+<joint name="d_rev18" type="continuous">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="d_part17_1"/>
+  <child link="d_part18_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+</robot>
