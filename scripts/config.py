@@ -3,6 +3,8 @@ import numpy as np
 serial_port = '/dev/ttyUSB0'
 serial_timeout = 1
 
+count = 0
+
 # 数値データが1増えると何度増えるか
 data_rad_diff = 0.24
 

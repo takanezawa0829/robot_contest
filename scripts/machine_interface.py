@@ -41,8 +41,8 @@ def callback(data):
 def serial():
     rospy.init_node('machine_interface', anonymous=True)
 
-    # Subscriberとしてjoint_statesというトピックに対してSubscribeし、topicが更新されたときはcallbackという名前のコールバック関数を実行
-    rospy.Subscriber('joint_states', JointState, callback)
+    # Subscriberとしてrobot_joint_dataというトピックに対してSubscribeし、topicが更新されたときはcallbackという名前のコールバック関数を実行
+    rospy.Subscriber('robot_joint_data', JointState, callback)
 
     # topic更新の待ちうけを行う関数
     rospy.spin()
