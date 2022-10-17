@@ -66,6 +66,7 @@
   </include>
 
   <!-- 実機をJointStateに追従させる -->
+  <node pkg="robot_contest" type="receive_joint_state.py" name="receive_joint_state"/>
   <node pkg="robot_contest" type="machine_interface.py" name="machine_interface"/>
 
 </launch>
