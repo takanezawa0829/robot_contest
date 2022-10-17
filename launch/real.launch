@@ -66,7 +66,8 @@
   </include>
 
   <!-- 実機をJointStateに追従させる -->
-  <node pkg="robot_contest" type="receive_joint_state.py" name="receive_joint_state"/>
-  <node pkg="robot_contest" type="machine_interface.py" name="machine_interface"/>
+  <arg name="is_real" default="true" />
+  <node pkg="robot_contest" type="receive_joint_state.py" name="receive_joint_state" if="$(arg is_real)"/>
+  <node pkg="robot_contest" type="machine_interface.py" name="machine_interface" if="$(arg is_real)"/>
 
 </launch>
