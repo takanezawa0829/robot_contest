@@ -10,7 +10,7 @@
 sh scripts/export_pip3_lib.sh
 ```
 
-# Ubuntu20.04LTSでROS1の環境構築をする。
+# Ubuntu20.04LTSでPython3,ROS1,MoveItの環境構築をする。
 ## Python3の設定をする。
 1. Ubuntuを更新する。
 ```
@@ -70,9 +70,33 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## MoveItをインストールする。
+1. aptからインストールすることができる。
+```
+sudo apt install ros-noetic-moveit*
+```
+```
+sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-joint-state-controller ros-noetic-effort-controllers ros-noetic-position-controllers ros-noetic-joint-trajectory-controller
+```
+
+## uart通信のために、デバイスファイルの編集権限を実行ユーザーに付与する。
+1. デバイスのユーザーグループを確認する。(通常のデバイスファイルは「/dev/ttyUSB0」)
+```
+stat /dev/ttyUSB0
+```
+2. デバイスのユーザーグループに実行ユーザーを追加する。(通常は「dialout」)
+```
+sudo usermod -a -G dialout $USER
+```
+3. 再起動する。
+```
+shutdown -r now
+```
+
+# 実機を起動する方法
 
 
-
+# 実機なしで起動する方法
 
 
 
