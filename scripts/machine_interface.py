@@ -6,13 +6,12 @@ import rospy
 from sensor_msgs.msg import JointState
 import HiwonderServoController as servo
 import config
-servo.setConfig(config.serial_port, config.serial_timeout)
 import numpy as np
 
 def deg2data(deg, standard, reverse):
     if(reverse):
-        return standard - deg / config.data_rad_diff
-    return standard + deg / config.data_rad_diff
+        return int(round(standard - deg / config.data_rad_diff))
+    return int(round(standard + deg / config.data_rad_diff))
 
 def data2deg(data, standard, reverse):
     if(reverse):
@@ -30,15 +29,16 @@ def callback(data):
             standard = ang_list[data.name[i]]['standard']
             reverse = ang_list[data.name[i]]['reverse']
             deg = np.rad2deg(data.position[i])
-            print('joint名', data.name[i])
-            print('id', id)
-            print('角度[deg]', deg)
-            print('standard', standard)
-            print('reverse', reverse)
+            # print('joint名', data.name[i])
+            # print('id', id)
+            # print('角度[deg]', deg)
+            # print('standard', standard)
+            # print('reverse', reverse)
             ang_data = deg2data(deg, standard, reverse)
-            print('ang_data', ang_data)
+            # print('ang_data', ang_data)
+            # print('-----------------------')
             # サーボを動作
-            servo.moveServo(id, ang_data, standard)
+            servo.moveServo(id, ang_data, 500)
 
 def serial():
     rospy.init_node('machine_interface', anonymous=True)
@@ -77,6 +77,9 @@ def serial():
             'standard': foot['end']['right']['standard'][i],
             'reverse': foot['end']['right']['reverse'][i],
         }
+    
+    servo.setConfig(config.serial_port, config.serial_timeout)
+
 
     # Subscriberとしてrobot_joint_dataというトピックに対してSubscribeし、topicが更新されたときはcallbackという名前のコールバック関数を実行
     rospy.Subscriber('robot_joint_data', JointState, callback)
