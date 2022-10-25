@@ -62,7 +62,7 @@ def callback(data):
 
     for i in np.arange(len(data.name)):
         if data.name[i] in joint_list:
-            joint_list[data.name[i]] = np.deg2rad(data.position[i])
+            joint_list[data.name[i]] = np.rad2deg(data.position[i])
 
     # OutputCsv型のmessageのインスタンスを作成
     oc_msg = OutputCsv()
