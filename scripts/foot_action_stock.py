@@ -68,15 +68,11 @@ def callback(data):
     oc_msg = OutputCsv()
 
     # ヘッダーを設定
-    header = ['count']
-    header.extend(foot['front']['left']['rev'])
-    oc_msg.header = header
+    oc_msg.header = foot['front']['left']['rev']
 
     oc_msg.value = []
-    config.count += 1
-    oc_msg.value.append(config.count)
-    for i in np.arange(len(header) - 1):
-        oc_msg.value.append(joint_list[oc_msg.header[i + 1]])
+    for i in np.arange(len(oc_msg.header)):
+        oc_msg.value.append(joint_list[oc_msg.header[i]])
 
     # publishする関数
     oc.publish(oc_msg)
