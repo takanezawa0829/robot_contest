@@ -1051,14 +1051,14 @@
 
 <joint name="d_rev17" type="continuous">
   <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-  <parent link="part18_1"/>
+  <parent link="d_part16_1"/>
   <child link="d_part17_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
 </joint>
 
 <joint name="d_rev18" type="continuous">
   <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-  <parent link="part18_1"/>
+  <parent link="d_part17_1"/>
   <child link="d_part18_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
 </joint>
