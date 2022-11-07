@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="spider_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find robot_contest)/urdf/materials.xacro" />
-<xacro:include filename="$(find robot_contest)/urdf/spider_robot.trans" />
-<xacro:include filename="$(find robot_contest)/urdf/spider_robot.gazebo" />
+<xacro:include filename="$(find spider_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find spider_robot_description)/urdf/spider_robot.trans" />
+<xacro:include filename="$(find spider_robot_description)/urdf/spider_robot.gazebo" />
 
 <link name="dummy">
 </link>
@@ -22,14 +22,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -43,14 +43,14 @@
   <visual>
     <origin xyz="-0.095 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.095 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -64,14 +64,14 @@
   <visual>
     <origin xyz="-0.12058 -0.116673 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.12058 -0.116673 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -85,14 +85,14 @@
   <visual>
     <origin xyz="-0.095 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.095 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -106,14 +106,14 @@
   <visual>
     <origin xyz="-0.12058 0.116673 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.12058 0.116673 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -127,14 +127,14 @@
   <visual>
     <origin xyz="-0.0 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -148,14 +148,14 @@
   <visual>
     <origin xyz="0.025875 -0.116551 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.025875 -0.116551 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -169,14 +169,14 @@
   <visual>
     <origin xyz="0.0 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.0 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -190,14 +190,14 @@
   <visual>
     <origin xyz="0.025875 0.116551 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.025875 0.116551 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -211,14 +211,14 @@
   <visual>
     <origin xyz="0.095 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.095 -0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part13_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -232,14 +232,14 @@
   <visual>
     <origin xyz="0.157173 -0.08008 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.157173 -0.08008 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part14_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -253,14 +253,14 @@
   <visual>
     <origin xyz="0.095 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.095 0.0545 -0.005" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part16_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -274,161 +274,140 @@
   <visual>
     <origin xyz="0.157173 0.08008 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.157173 0.08008 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="body_1">
-  <inertial>
-    <origin xyz="-0.11781892379167405 -0.05381750881088575 0.058840503865352785" rpy="0 0 0"/>
-    <mass value="11.882484155705294"/>
-    <inertia ixx="0.03976" iyy="0.086041" izz="0.059318" ixy="-0.000229" iyz="-0.000376" ixz="0.013585"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.095 -0.0545 -0.0526" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://robot_contest/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="_"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.095 -0.0545 -0.0526" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://robot_contest/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part17_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part3_1">
   <inertial>
-    <origin xyz="0.0042211583834646516 -0.04758074361356199 -0.010298255954450986" rpy="0 0 0"/>
-    <mass value="0.1250565081305272"/>
+    <origin xyz="0.004221158383464624 -0.04758074361356199 -0.010298255954450997" rpy="0 0 0"/>
+    <mass value="0.12505650813052724"/>
     <inertia ixx="0.001082" iyy="0.000159" izz="0.001129" ixy="-7.5e-05" iyz="-0.000208" ixz="-1.1e-05"/>
   </inertial>
   <visual>
     <origin xyz="-0.214003 -0.138254 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.214003 -0.138254 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part6_1">
   <inertial>
-    <origin xyz="0.03479869953680864 0.059204958964473656 -0.010298255954450442" rpy="0 0 0"/>
-    <mass value="0.12505650813053187"/>
+    <origin xyz="0.03479869953680867 0.0592049589644737 -0.010298255954450442" rpy="0 0 0"/>
+    <mass value="0.1250565081305319"/>
     <inertia ixx="0.001363" iyy="0.000216" izz="0.001467" ixy="-0.000277" iyz="0.000239" ixz="6.3e-05"/>
   </inertial>
   <visual>
     <origin xyz="-0.214003 0.138254 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.214003 0.138254 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part9_1">
   <inertial>
-    <origin xyz="-0.029793763473125127 0.046138449780679436 -0.010298255954450303" rpy="0 0 0"/>
-    <mass value="0.1250565081305322"/>
+    <origin xyz="-0.029793763473125137 0.04613844978067949 -0.010298255954450313" rpy="0 0 0"/>
+    <mass value="0.12505650813053223"/>
     <inertia ixx="0.000196" iyy="0.000106" izz="0.000191" ixy="-8e-06" iyz="2e-05" ixz="-1.2e-05"/>
   </inertial>
   <visual>
     <origin xyz="-0.024925 -0.197871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.024925 -0.197871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part12_1">
   <inertial>
-    <origin xyz="-0.07633011297300413 -0.06509177558310728 -0.010298255954450226" rpy="0 0 0"/>
-    <mass value="0.1250565081305323"/>
+    <origin xyz="-0.0763301129730041 -0.06509177558310722 -0.010298255954450247" rpy="0 0 0"/>
+    <mass value="0.12505650813053235"/>
     <inertia ixx="0.000278" iyy="0.000392" izz="0.000557" ixy="-0.000175" iyz="-6.3e-05" ixz="-0.000111"/>
   </inertial>
   <visual>
     <origin xyz="-0.024925 0.197871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.024925 0.197871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part15_1">
   <inertial>
-    <origin xyz="-0.037212619812451914 0.07321669362063976 -0.010298255954450782" rpy="0 0 0"/>
+    <origin xyz="-0.03721261981245194 0.07321669362063984 -0.010298255954450782" rpy="0 0 0"/>
     <mass value="0.12505650813052843"/>
     <inertia ixx="0.000643" iyy="0.000138" izz="0.00067" ixy="-1.1e-05" iyz="0.000146" ixz="1.5e-05"/>
   </inertial>
   <visual>
     <origin xyz="0.178754 -0.173503 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.178754 -0.173503 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part15_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <link name="part18_1">
   <inertial>
-    <origin xyz="-0.08233230187734139 0.09080916411778586 -0.010298255954450788" rpy="0 0 0"/>
-    <mass value="0.1250565081305291"/>
+    <origin xyz="-0.08233230187734139 0.09080916411778589 -0.010298255954450788" rpy="0 0 0"/>
+    <mass value="0.12505650813052913"/>
     <inertia ixx="0.001224" iyy="0.000322" izz="0.001434" ixy="0.000383" iyz="0.000223" ixz="-8.3e-05"/>
   </inertial>
   <visual>
     <origin xyz="0.178754 0.173503 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.178754 0.173503 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/part18_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -442,14 +421,14 @@
   <visual>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -463,14 +442,14 @@
   <visual>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -484,14 +463,14 @@
   <visual>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 -0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -505,14 +484,14 @@
   <visual>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -526,14 +505,14 @@
   <visual>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -547,14 +526,14 @@
   <visual>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="-0.294702 0.255545 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -568,14 +547,14 @@
   <visual>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -589,14 +568,14 @@
   <visual>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -610,14 +589,14 @@
   <visual>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 -0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -631,14 +610,14 @@
   <visual>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -652,14 +631,14 @@
   <visual>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -673,14 +652,14 @@
   <visual>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.00095 0.337871 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part12_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -694,14 +673,14 @@
   <visual>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part13_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -715,14 +694,14 @@
   <visual>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part14_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -736,14 +715,14 @@
   <visual>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 -0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part15_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -757,14 +736,14 @@
   <visual>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part16_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -778,14 +757,14 @@
   <visual>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part17_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -799,14 +778,35 @@
   <visual>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="_"/>
   </visual>
   <collision>
     <origin xyz="0.296045 0.254202 -0.0304" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://robot_contest/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://spider_robot_description/meshes/d_part18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="body_1">
+  <inertial>
+    <origin xyz="-0.1080209237916741 -0.04381750881088558 0.07384050386535285" rpy="0 0 0"/>
+    <mass value="11.882484155705294"/>
+    <inertia ixx="0.03976" iyy="0.086041" izz="0.059318" ixy="-0.000229" iyz="-0.000376" ixz="0.013585"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.085202 -0.0445 -0.0415" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://spider_robot_description/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="_"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.085202 -0.0445 -0.0415" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://spider_robot_description/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -893,12 +893,6 @@
   <parent link="part16_1"/>
   <child link="part17_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
-</joint>
-
-<joint name="fix1" type="fixed">
-  <origin xyz="0.0 0.0 0.0476" rpy="0 0 0"/>
-  <parent link="part1_1"/>
-  <child link="body_1"/>
 </joint>
 
 <joint name="rev3" type="continuous">
@@ -1057,16 +1051,22 @@
 
 <joint name="d_rev17" type="continuous">
   <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-  <parent link="d_part16_1"/>
+  <parent link="part18_1"/>
   <child link="d_part17_1"/>
   <axis xyz="-0.707107 0.707107 0.0"/>
 </joint>
 
 <joint name="d_rev18" type="continuous">
   <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-  <parent link="d_part17_1"/>
+  <parent link="part18_1"/>
   <child link="d_part18_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="fix1" type="fixed">
+  <origin xyz="0.085202 0.0445 0.0415" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="body_1"/>
 </joint>
 
 </robot>
