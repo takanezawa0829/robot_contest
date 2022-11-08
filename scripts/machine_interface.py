@@ -38,7 +38,10 @@ def callback(data):
             # print('ang_data', ang_data)
             # print('-----------------------')
             # サーボを動作
-            servo.moveServo(id, ang_data, 500)
+            try:
+                servo.moveServo(id, ang_data, 500)
+            except Exception as e:
+                print('Warning: servo motor not working.')
 
 def serial():
     rospy.init_node('machine_interface', anonymous=True)
@@ -77,8 +80,10 @@ def serial():
             'standard': foot['end']['right']['standard'][i],
             'reverse': foot['end']['right']['reverse'][i],
         }
-    
-    servo.setConfig(config.serial_port, config.serial_timeout)
+    try:
+        servo.setConfig(config.serial_port, config.serial_timeout)
+    except Exception as e:
+        print("Warning: Unable to set servo controller.")
 
 
     # Subscriberとしてrobot_joint_dataというトピックに対してSubscribeし、topicが更新されたときはcallbackという名前のコールバック関数を実行
