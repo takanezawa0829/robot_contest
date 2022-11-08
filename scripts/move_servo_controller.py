@@ -121,6 +121,8 @@ def main():
             'standard': foot['end']['right']['standard'][i],
             'reverse': foot['end']['right']['reverse'][i],
         }
+
+    start_stop_publish(False)
     
     # servo.setConfig(config.serial_port, config.serial_timeout)
 
