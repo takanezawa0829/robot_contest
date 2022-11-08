@@ -7,9 +7,17 @@
 # pythonでROSのソフトウェアを記述するときにimportするモジュール
 from os import rename
 import rospy
+import config
 # 自分で定義したmessageファイルから生成されたモジュール
 from std_msgs.msg import String
 from robot_contest.msg import MoveCommand
+
+def return_flag():
+    f = open(config.directory_path + '/scripts/command_stop.txt', 'r')
+    data = str(f.read())
+    f.close()
+    return data
+
 
 # 実際にpublishする関数
 def publish_date():
@@ -31,14 +39,16 @@ def publish_date():
 
     # ctl + Cで終了しない限りwhileループでpublishし続ける
     while not rospy.is_shutdown():
-        # データを入力
-        oc_msg.command = "init_pose"
-        oc_msg.speed = 4
 
-        print(oc_msg.command, oc_msg.speed)
+        if return_flag() == 'False':
+            # データを入力
+            oc_msg.command = "init_pose"
+            oc_msg.speed = 1
 
-        # publishする関数
-        oc.publish(oc_msg)
+            print(oc_msg.command, oc_msg.speed)
+
+            # publishする関数
+            oc.publish(oc_msg)
 
         # rだけ待機
         r.sleep()

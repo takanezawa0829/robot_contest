@@ -48,11 +48,17 @@ def publish_joint_states(joint_list):
     oc_msg.header.stamp = rospy.Time.now()
     oc.publish(oc_msg)
 
+def start_stop_publish(bool):
+    f = open(config.directory_path + '/scripts/command_stop.txt', 'w')
+    f.write(str(bool))
+    f.close()
 
 # Subscribeする対象のトピックが更新されたら呼び出されるコールバック関数
 # 引数にはトピックにPublishされるメッセージの型と同じ型を定義
 def callback(data):
     if data.command == 'init_pose':
+        # publishを一時停止
+        start_stop_publish(True)
 
         csv_data = csv_tool('init.csv')
         f = csv_data.confirm()
@@ -74,6 +80,9 @@ def callback(data):
             rospy.sleep(0.1 / data.speed)
                 
         csv_data.close_file()
+        # publishを再開
+        start_stop_publish(False)
+
 
 def main():
     rospy.init_node('move_servo_controller', anonymous=True)
