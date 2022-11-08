@@ -2,73 +2,55 @@
 # -*- coding: utf-8 -*-
 # license removed for brevity
 
-# pythonでROSのソフトウェアを記述するときにimportするモジュール
+# 直線的に動作するプログラム
+
 import rospy
 import sys
 import moveit_commander
 import tf
 import geometry_msgs.msg
 from geometry_msgs.msg import Quaternion, Vector3
-
-# # 実際にpublishする関数
-# def publish_date():
-#     # 初期化宣言 : このソフトウェアは"pose_planner"という名前
-#     rospy.init_node('pose_planner', anonymous=True)
-
-#     # nodeの宣言: publisherのインスタンスを作る
-#     # hello_worldというtopicにString型のmessageを送るPublisherを作成
-#     oc = rospy.Publisher('hello_world', String, queue_size=100)
-
-#     # 1秒間にpublishする数の設定
-#     r = rospy.Rate(1)
-
-#     # 送信するデータxを定義する
-#     x = 0
-
-#     # OutputCsv型のmessageのインスタンスを作成
-#     oc_msg = String()
-
-#     # ctl + Cで終了しない限りwhileループでpublishし続ける
-#     while not rospy.is_shutdown():
-#         # データを入力
-#         oc_msg.data = "Hello World!!!"
-
-#         print(oc_msg.data)
-
-#         # publishする関数
-#         oc.publish(oc_msg)
-
-#         # rだけ待機
-#         r.sleep()
-
+import action_foot
 
 def main():
-    # MoveitCommanderの初期化
-    moveit_commander.roscpp_initialize(sys.argv)
-
     # ノードの生成
     rospy.init_node("pose_planner")
 
-    # MoveGroupCommanderの準備
-    move_group = moveit_commander.MoveGroupCommander("front_left_foot")
+    front_left_waypoints = action_foot.linear_move(front_left_foot, 0.04, 0, 0)
+    front_right_waypoints = action_foot.linear_move(front_right_foot, 0.04, 0, 0)
+    middle_left_waypoints = action_foot.linear_move(middle_left_foot, 0.04, 0, 0)
+    middle_right_waypoints = action_foot.linear_move(middle_right_foot, 0.04, 0, 0)
+    end_left_waypoints = action_foot.linear_move(end_left_foot, 0.04, 0, 0)
+    end_right_waypoints = action_foot.linear_move(end_right_foot, 0.04, 0, 0)
 
-    # エンドポイントの姿勢でゴール状態を指定
-    pose_goal = geometry_msgs.msg.Pose()
-    pose_goal.position = Vector3(0.33, -0.14, 0)
-    q = tf.transformations.quaternion_from_euler(0, 0, 0)
-    pose_goal.orientation = Quaternion(x=q[0], y=q[1], z=q[2], w=q[3])
-    move_group.set_pose_target(pose_goal)
+    (front_left_plan, front_left_fraction) = front_left_foot.compute_cartesian_path(front_left_waypoints, 0.01, 0.0)
+    (front_right_plan, front_right_fraction) = front_right_foot.compute_cartesian_path(front_right_waypoints, 0.01, 0.0)
+    (middle_left_plan, middle_left_fraction) = middle_left_foot.compute_cartesian_path(middle_left_waypoints, 0.01, 0.0)
+    (middle_right_plan, middle_right_fraction) = middle_right_foot.compute_cartesian_path(middle_right_waypoints, 0.01, 0.0)
+    (end_left_plan, end_left_fraction) = end_left_foot.compute_cartesian_path(end_left_waypoints, 0.01, 0.0)
+    (end_right_plan, end_right_fraction) = end_right_foot.compute_cartesian_path(end_right_waypoints, 0.01, 0.0)
 
-    # モーションプランの計画と実行
-    move_group.go(wait=True)
+    front_left_foot.execute(front_left_plan)
+    front_right_foot.execute(front_right_plan)
+    middle_left_foot.execute(middle_left_plan)
+    middle_right_foot.execute(middle_right_plan)
+    end_left_foot.execute(end_left_plan)
+    end_right_foot.execute(end_right_plan)
 
-    # 後処理
-    move_group.stop()
-    move_group.clear_pose_targets()
-
-# コマンドプロンプトから呼び出された時だけ関数を実行するためのif文
 if __name__ == '__main__':
     try:
+        # MoveitCommanderの初期化
+        moveit_commander.roscpp_initialize(sys.argv)
+
+        # MoveGroupCommanderの準備
+        global front_left_foot, front_right_foot, middle_left_foot, middle_right_foot, end_left_foot, end_right_foot
+        front_left_foot = moveit_commander.MoveGroupCommander("front_left_foot")
+        front_right_foot = moveit_commander.MoveGroupCommander("front_right_foot")
+        middle_left_foot = moveit_commander.MoveGroupCommander("middle_left_foot")
+        middle_right_foot = moveit_commander.MoveGroupCommander("middle_right_foot")
+        end_left_foot = moveit_commander.MoveGroupCommander("end_left_foot")
+        end_right_foot = moveit_commander.MoveGroupCommander("end_right_foot")
+
         # publish_date()
         main()
 
