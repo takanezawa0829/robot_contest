@@ -1,5 +1,8 @@
 import numpy as np
 
+#ディレクトリのパス
+directory_path = '/home/takane/catkin_ws/src/robot_contest'
+
 # uart通信のポート設定
 serial_port = '/dev/ttyUSB0'
 serial_timeout = 1
