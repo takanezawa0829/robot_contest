@@ -56,11 +56,13 @@ def start_stop_publish(bool):
 # Subscribeする対象のトピックが更新されたら呼び出されるコールバック関数
 # 引数にはトピックにPublishされるメッセージの型と同じ型を定義
 def callback(data):
+
+    # 0度から初期姿勢に移行
     if data.command == 'init_pose':
         # publishを一時停止
         start_stop_publish(True)
 
-        csv_data = csv_tool('init.csv')
+        csv_data = csv_tool('init_pose.csv')
         f = csv_data.confirm()
         for row in f:
             for joint_name in row:
@@ -83,6 +85,28 @@ def callback(data):
         # publishを再開
         start_stop_publish(False)
 
+    # 関節角度をすべて0にする
+    if data.command == 'init':
+        # publishを一時停止
+        start_stop_publish(True)
+
+        csv_data = csv_tool('init.csv')
+        f = csv_data.confirm()
+        for row in f:
+            for joint_name in row:
+                ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])
+                
+                # rvizに反映
+                publish_joint_states(row)
+
+                # サーボを動作
+                # servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+
+            rospy.sleep(0.1 / data.speed)
+                
+        csv_data.close_file()
+        # publishを再開
+        start_stop_publish(False)
 
 def main():
     rospy.init_node('move_servo_controller', anonymous=True)
