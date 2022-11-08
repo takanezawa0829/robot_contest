@@ -33,6 +33,7 @@ def quadratic(h, d, i, reverse):
 
     return list
 
+# 2次関数
 def quadratic_move(move_group, h, d, i, reverse):
     # ウェイポイント群
     waypoints = []
@@ -49,6 +50,7 @@ def quadratic_move(move_group, h, d, i, reverse):
 
     return waypoints
 
+# 初期姿勢
 def init_pose():
     front_left_foot = moveit_commander.MoveGroupCommander("front_left_foot")
     front_right_foot = moveit_commander.MoveGroupCommander("front_right_foot")
@@ -131,3 +133,18 @@ def init_pose():
     end_right_foot.go(wait=True)
     # 後処理
     end_right_foot.stop()
+
+# 直線移動
+def linear_move(move_group, x, y, z):
+    # ウェイポイント群
+    waypoints = []
+    scale = 1.0
+
+    # ウェイポイントの追加
+    wpose = move_group.get_current_pose().pose
+    wpose.position.x += scale * x
+    wpose.position.y += scale * y
+    wpose.position.z += scale * z
+    waypoints.append(wpose)
+
+    return waypoints
