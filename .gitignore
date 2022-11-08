@@ -130,4 +130,4 @@ dmypy.json
 
 .vscode/
 
-command_stop.txt
+*command_stop.txt
