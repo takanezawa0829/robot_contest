@@ -56,6 +56,15 @@ def start_stop_publish(bool):
 # Subscribeする対象のトピックが更新されたら呼び出されるコールバック関数
 # 引数にはトピックにPublishされるメッセージの型と同じ型を定義
 def callback(data):
+    # 前進
+    if data.command == 'progress_move':
+        # publishを一時停止
+        start_stop_publish(True)
+
+
+
+        # publishを再開
+        start_stop_publish(False)
 
     # 0度から初期姿勢に移行
     if data.command == 'init_pose':
@@ -77,7 +86,10 @@ def callback(data):
                 publish_joint_states(row)
 
                 # サーボを動作
-                # servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                try:
+                    servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                except Exception as e:
+                    print('Warning: servo motor not working.')
 
             rospy.sleep(0.1 / data.speed)
                 
@@ -100,7 +112,10 @@ def callback(data):
                 publish_joint_states(row)
 
                 # サーボを動作
-                # servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                try:
+                    servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                except Exception as e:
+                    print('Warning: servo motor not working.')
 
             rospy.sleep(0.1 / data.speed)
                 
@@ -147,8 +162,10 @@ def main():
         }
 
     start_stop_publish(False)
-    
-    # servo.setConfig(config.serial_port, config.serial_timeout)
+    try:
+        servo.setConfig(config.serial_port, config.serial_timeout)
+    except Exception as e:
+        print("Warning: Unable to set servo controller.")
 
     # joint_statesというtopicにJointState型のmessageを送るPublisherを作成
     global oc
