@@ -12,13 +12,6 @@ import config
 from std_msgs.msg import String
 from robot_contest.msg import MoveCommand
 
-def return_flag():
-    f = open(config.directory_path + '/scripts/command_stop.txt', 'r')
-    data = str(f.read())
-    f.close()
-    return data
-
-
 # 実際にpublishする関数
 def publish_date():
     # 初期化宣言 : このソフトウェアは"hello_world"という名前
@@ -29,7 +22,7 @@ def publish_date():
     oc = rospy.Publisher('move_command', MoveCommand, queue_size=100)
 
     # 1秒間にpublishする数の設定
-    r = rospy.Rate(1)
+    r = rospy.Rate(5)
 
     # 送信するデータxを定義する
     x = 0
@@ -40,15 +33,14 @@ def publish_date():
     # ctl + Cで終了しない限りwhileループでpublishし続ける
     while not rospy.is_shutdown():
 
-        if return_flag() == 'False':
-            # データを入力
-            oc_msg.command = "init_pose"
-            oc_msg.speed = 1
+        # データを入力
+        oc_msg.command = "init_pose"
+        oc_msg.speed = 1
 
-            print(oc_msg.command, oc_msg.speed)
+        print(oc_msg.command, oc_msg.speed)
 
-            # publishする関数
-            oc.publish(oc_msg)
+        # publishする関数
+        oc.publish(oc_msg)
 
         # rだけ待機
         r.sleep()

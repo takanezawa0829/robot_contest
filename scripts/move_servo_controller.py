@@ -154,8 +154,7 @@ def main():
     global oc
     oc = rospy.Publisher('joint_states', JointState, queue_size=100)
 
-    # Subscriberとしてmove_commandというトピックに対してSubscribeし、topicが更新されたときはcallbackという名前のコールバック関数を実行
-    rospy.Subscriber('move_command', MoveCommand, callback)
+    rospy.Subscriber('command_dummy', MoveCommand, callback)
 
     # topic更新の待ちうけを行う関数
     rospy.spin()
