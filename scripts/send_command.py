@@ -34,7 +34,7 @@ def publish_date():
     while not rospy.is_shutdown():
 
         # データを入力
-        oc_msg.command = "init_pose"
+        oc_msg.command = "前進"
         oc_msg.speed = 1
 
         print(oc_msg.command, oc_msg.speed)

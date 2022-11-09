@@ -56,13 +56,59 @@ def start_stop_publish(bool):
 # Subscribeする対象のトピックが更新されたら呼び出されるコールバック関数
 # 引数にはトピックにPublishされるメッセージの型と同じ型を定義
 def callback(data):
+
     # 前進
-    if data.command == 'progress_move':
+    if data.command == '前進':
         # publishを一時停止
         start_stop_publish(True)
-
-
-
+        if config.robot_status == 'init_pose':
+            csv_data = csv_tool('初期姿勢to前進_左準備.csv')
+            f = csv_data.confirm()
+            for row in f:
+                for joint_name in row:
+                    ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])
+                    # rvizに反映
+                    publish_joint_states(row)
+                    # サーボを動作
+                    try:
+                        servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                    except Exception as e:
+                        print('Warning: servo motor not working.')
+                rospy.sleep(0.1 / data.speed)
+            csv_data.close_file()
+            config.robot_status = '前進_左'
+        elif config.robot_status == '前進_左':
+            csv_data = csv_tool('前進_右.csv')
+            f = csv_data.confirm()
+            for row in f:
+                for joint_name in row:
+                    ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])                
+                    # rvizに反映
+                    publish_joint_states(row)
+                    # サーボを動作
+                    try:
+                        servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                    except Exception as e:
+                        print('Warning: servo motor not working.')
+                rospy.sleep(0.1 / data.speed)
+            csv_data.close_file()
+            config.robot_status = '前進_右'
+        elif config.robot_status == '前進_右':
+            csv_data = csv_tool('前進_左.csv')
+            f = csv_data.confirm()
+            for row in f:
+                for joint_name in row:
+                    ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])                
+                    # rvizに反映
+                    publish_joint_states(row)
+                    # サーボを動作
+                    try:
+                        servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
+                    except Exception as e:
+                        print('Warning: servo motor not working.')
+                rospy.sleep(0.1 / data.speed)
+            csv_data.close_file()
+            config.robot_status = '前進_左'
         # publishを再開
         start_stop_publish(False)
 
@@ -71,7 +117,7 @@ def callback(data):
         # publishを一時停止
         start_stop_publish(True)
 
-        csv_data = csv_tool('init_pose.csv')
+        csv_data = csv_tool('初期姿勢.csv')
         f = csv_data.confirm()
         for row in f:
             for joint_name in row:
@@ -102,7 +148,7 @@ def callback(data):
         # publishを一時停止
         start_stop_publish(True)
 
-        csv_data = csv_tool('init.csv')
+        csv_data = csv_tool('開脚姿勢.csv')
         f = csv_data.confirm()
         for row in f:
             for joint_name in row:
@@ -162,6 +208,7 @@ def main():
         }
 
     start_stop_publish(False)
+
     try:
         servo.setConfig(config.serial_port, config.serial_timeout)
     except Exception as e:

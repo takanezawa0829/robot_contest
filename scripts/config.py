@@ -61,3 +61,5 @@ foot = {
 
 # Publishされたjoint_statesの回数を数えるために使用(変更禁止)
 count = 0
+# robotの現在の状態を保存するために使用(変更禁止)
+robot_status = 'init_pose'
