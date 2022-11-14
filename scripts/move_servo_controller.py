@@ -69,11 +69,22 @@ def callback(data):
                     ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])
                     # rvizに反映
                     publish_joint_states(row)
+
+                    # サーボが限界値を超えないように修正
+                    if not (ang_list[joint_name]['min'] < ang_data):
+                        ang_data = ang_list[joint_name]['min']
+                        print("最小値を下回りました.")
+                    elif not (ang_data < ang_list[joint_name]['max']):
+                        ang_data = ang_list[joint_name]['max']
+                        print("最大値を超えました.")
+
                     # サーボを動作
                     try:
                         servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
                     except Exception as e:
                         print('Warning: servo motor not working.')
+                    print(ang_list[joint_name]['id'], ang_data)
+
                 rospy.sleep(0.1 / data.speed)
             csv_data.close_file()
             config.robot_status = '前進_左'
@@ -85,11 +96,22 @@ def callback(data):
                     ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])                
                     # rvizに反映
                     publish_joint_states(row)
+
+                    # サーボが限界値を超えないように修正
+                    if not (ang_list[joint_name]['min'] < ang_data):
+                        ang_data = ang_list[joint_name]['min']
+                        print("最小値を下回りました.")
+                    elif not (ang_data < ang_list[joint_name]['max']):
+                        ang_data = ang_list[joint_name]['max']
+                        print("最大値を超えました.")
+
                     # サーボを動作
                     try:
                         servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
                     except Exception as e:
                         print('Warning: servo motor not working.')
+                    print(ang_list[joint_name]['id'], ang_data)
+
                 rospy.sleep(0.1 / data.speed)
             csv_data.close_file()
             config.robot_status = '前進_右'
@@ -101,11 +123,22 @@ def callback(data):
                     ang_data = deg2data(float(row[joint_name]), ang_list[joint_name]['standard'], ang_list[joint_name]['reverse'])                
                     # rvizに反映
                     publish_joint_states(row)
+
+                    # サーボが限界値を超えないように修正
+                    if not (ang_list[joint_name]['min'] < ang_data):
+                        ang_data = ang_list[joint_name]['min']
+                        print("最小値を下回りました.")
+                    elif not (ang_data < ang_list[joint_name]['max']):
+                        ang_data = ang_list[joint_name]['max']
+                        print("最大値を超えました.")
+
                     # サーボを動作
                     try:
                         servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
                     except Exception as e:
                         print('Warning: servo motor not working.')
+                    print(ang_list[joint_name]['id'], ang_data)
+
                 rospy.sleep(0.1 / data.speed)
             csv_data.close_file()
             config.robot_status = '前進_左'
@@ -131,11 +164,20 @@ def callback(data):
                 # rvizに反映
                 publish_joint_states(row)
 
+                # サーボが限界値を超えないように修正
+                if not (ang_list[joint_name]['min'] < ang_data):
+                    ang_data = ang_list[joint_name]['min']
+                    print("最小値を下回りました.")
+                elif not (ang_data < ang_list[joint_name]['max']):
+                    ang_data = ang_list[joint_name]['max']
+                    print("最大値を超えました.")
+
                 # サーボを動作
                 try:
                     servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
                 except Exception as e:
                     print('Warning: servo motor not working.')
+                print(ang_list[joint_name]['id'], ang_data)
 
             rospy.sleep(0.1 / data.speed)
                 
@@ -157,11 +199,20 @@ def callback(data):
                 # rvizに反映
                 publish_joint_states(row)
 
+                # サーボが限界値を超えないように修正
+                if not (ang_list[joint_name]['min'] < ang_data):
+                    ang_data = ang_list[joint_name]['min']
+                    print("最小値を下回りました.")
+                elif not (ang_data < ang_list[joint_name]['max']):
+                    ang_data = ang_list[joint_name]['max']
+                    print("最大値を超えました.")
+
                 # サーボを動作
                 try:
                     servo.moveServo(ang_list[joint_name]['id'], ang_data, 500)
                 except Exception as e:
                     print('Warning: servo motor not working.')
+                print(ang_list[joint_name]['id'], ang_data)
 
             rospy.sleep(0.1 / data.speed)
                 
@@ -180,31 +231,43 @@ def main():
             'id': foot['front']['left']['id'][i],
             'standard': foot['front']['left']['standard'][i],
             'reverse': foot['front']['left']['reverse'][i],
+            'max': foot['front']['left']['max'][i],
+            'min': foot['front']['left']['min'][i],
         }
         ang_list[foot['front']['right']['rev'][i]] = {
             'id': foot['front']['right']['id'][i],
             'standard': foot['front']['right']['standard'][i],
             'reverse': foot['front']['right']['reverse'][i],
+            'max': foot['front']['right']['max'][i],
+            'min': foot['front']['right']['min'][i],
         }
         ang_list[foot['middle']['left']['rev'][i]] = {
             'id': foot['middle']['left']['id'][i],
             'standard': foot['middle']['left']['standard'][i],
             'reverse': foot['middle']['left']['reverse'][i],
+            'max': foot['middle']['left']['max'][i],
+            'min': foot['middle']['left']['min'][i],
         }
         ang_list[foot['middle']['right']['rev'][i]] = {
             'id': foot['middle']['right']['id'][i],
             'standard': foot['middle']['right']['standard'][i],
             'reverse': foot['middle']['right']['reverse'][i],
+            'max': foot['middle']['right']['max'][i],
+            'min': foot['middle']['right']['min'][i],
         }
         ang_list[foot['end']['left']['rev'][i]] = {
             'id': foot['end']['left']['id'][i],
             'standard': foot['end']['left']['standard'][i],
             'reverse': foot['end']['left']['reverse'][i],
+            'max': foot['end']['left']['max'][i],
+            'min': foot['end']['left']['min'][i],
         }
         ang_list[foot['end']['right']['rev'][i]] = {
             'id': foot['end']['right']['id'][i],
             'standard': foot['end']['right']['standard'][i],
             'reverse': foot['end']['right']['reverse'][i],
+            'max': foot['end']['right']['max'][i],
+            'min': foot['end']['right']['min'][i],
         }
 
     start_stop_publish(False)
