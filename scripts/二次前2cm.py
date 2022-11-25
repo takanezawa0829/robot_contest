@@ -19,12 +19,12 @@ def main():
     # 初期姿勢に移動
     # action_foot.init_pose()
 
-    front_left_waypoints = action_foot.quadratic_move(front_left_foot, 0.08, 0.02, 5, False)
-    front_right_waypoints = action_foot.quadratic_move(front_right_foot, 0.08, 0.02, 5, False)
-    middle_left_waypoints = action_foot.quadratic_move(middle_left_foot, 0.08, 0.02, 5, False)
-    middle_right_waypoints = action_foot.quadratic_move(middle_right_foot, 0.08, 0.02, 5, False)
-    end_left_waypoints = action_foot.quadratic_move(end_left_foot, 0.08, 0.02, 5, False)
-    end_right_waypoints = action_foot.quadratic_move(end_right_foot, 0.08, 0.02, 5, False)
+    front_left_waypoints = action_foot.quadratic_move(front_left_foot, 0.08, 0.02, 10, False)
+    front_right_waypoints = action_foot.quadratic_move(front_right_foot, 0.08, 0.02, 10, False)
+    middle_left_waypoints = action_foot.quadratic_move(middle_left_foot, 0.08, 0.02, 10, False)
+    middle_right_waypoints = action_foot.quadratic_move(middle_right_foot, 0.08, 0.02, 10, False)
+    end_left_waypoints = action_foot.quadratic_move(end_left_foot, 0.08, 0.02, 10, False)
+    end_right_waypoints = action_foot.quadratic_move(end_right_foot, 0.08, 0.02, 10, False)
 
     ( front_left_plan, front_left_fraction ) = front_left_foot.compute_cartesian_path( front_left_waypoints, 0.01, 0.0)
     ( front_right_plan, front_right_fraction ) = front_right_foot.compute_cartesian_path( front_right_waypoints, 0.01, 0.0)

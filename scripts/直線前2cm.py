@@ -16,12 +16,12 @@ def main():
     # ノードの生成
     rospy.init_node("pose_planner")
 
-    front_left_waypoints = action_foot.linear_move(front_left_foot, -0.02, 0, 0)
-    front_right_waypoints = action_foot.linear_move(front_right_foot, -0.02, 0, 0)
-    middle_left_waypoints = action_foot.linear_move(middle_left_foot, -0.02, 0, 0)
-    middle_right_waypoints = action_foot.linear_move(middle_right_foot, -0.02, 0, 0)
-    end_left_waypoints = action_foot.linear_move(end_left_foot, -0.02, 0, 0)
-    end_right_waypoints = action_foot.linear_move(end_right_foot, -0.02, 0, 0)
+    front_left_waypoints = action_foot.linear_move(front_left_foot, 0.02, 0, 0)
+    front_right_waypoints = action_foot.linear_move(front_right_foot, 0.02, 0, 0)
+    middle_left_waypoints = action_foot.linear_move(middle_left_foot, 0.02, 0, 0)
+    middle_right_waypoints = action_foot.linear_move(middle_right_foot, 0.02, 0, 0)
+    end_left_waypoints = action_foot.linear_move(end_left_foot, 0.02, 0, 0)
+    end_right_waypoints = action_foot.linear_move(end_right_foot, 0.02, 0, 0)
 
     (front_left_plan, front_left_fraction) = front_left_foot.compute_cartesian_path(front_left_waypoints, 0.01, 0.0)
     (front_right_plan, front_right_fraction) = front_right_foot.compute_cartesian_path(front_right_waypoints, 0.01, 0.0)

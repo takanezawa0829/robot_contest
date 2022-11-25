@@ -34,18 +34,33 @@ def quadratic(h, d, i, reverse):
     return list
 
 # 2次関数
-def quadratic_move(move_group, h, d, i, reverse):
+def quadratic_move(move_group, h, d, i, reverse, z_theta = 0):
     # ウェイポイント群
     waypoints = []
     scale = 1.0
+
+    z_rad = np.deg2rad(z_theta)
+    # 回転行列を定義
+    z_rev = np.matrix([
+        [np.cos(z_rad), -np.sin(z_rad), 0],
+        [np.sin(z_rad), np.cos(z_rad), 0],
+        [0, 0, 1],
+    ])
 
     # ウェイポイントの追加
     list = quadratic(h, d, i, reverse)
     for i in np.arange(len(list)):
         wpose = move_group.get_current_pose().pose
-        # wpose.position.x += scale * 0.07
-        wpose.position.z += scale * list[i]['y']
-        wpose.position.x += scale * list[i]['x']
+        waypoint = np.matrix([
+            [scale * list[i]['x']],
+            [0],
+            [scale * list[i]['y']],
+        ])
+        waypoint = np.dot(z_rev, waypoint)
+        print(waypoint)
+        wpose.position.x += waypoint[0, 0]
+        wpose.position.y += waypoint[1, 0]
+        wpose.position.z += waypoint[2, 0]
         waypoints.append(wpose)
 
     return waypoints
@@ -59,7 +74,7 @@ def init_pose():
     end_left_foot = moveit_commander.MoveGroupCommander("end_left_foot")
     end_right_foot = moveit_commander.MoveGroupCommander("end_right_foot")
     # 関節の角度でゴール状態を指定
-    init_ang = [np.deg2rad(0), np.deg2rad(-20), np.deg2rad(100)]
+    init_ang = [np.deg2rad(0), np.deg2rad(-10), np.deg2rad(90)]
     joint_goal = {
         'front_left_foot': {
             config.foot['front']['left']['rev'][0]: init_ang[0],
